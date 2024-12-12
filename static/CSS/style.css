@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+#main-container{
+    max-width: 1300px;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    margin: 10px 0;
+}
+
+form input, form button {
+    margin: 5px 0;
+    padding: 5px;
+    width: 100%;
+}
+
+
+/* Menu de navigation */
+.navigation-menu {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.navigation-menu .nav-link img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.navigation-menu .nav-link img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+h1 {
+    text-align: center; 
+    margin: 20px;
+    color: #ccc;
+    font-size: large;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+.status {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.en-bonne-voie {
+    background-color: #00C47A;
+    color: white;
+}
+.risque-faible {
+    background-color: #00B0F0;
+    color: white;
+}
+.risque-moyen {
+    background-color: #7030A0;
+    color: white;
+}
+.risque-eleve {
+    background-color: #FF0000;
+    color: white;
+}
+.non-attribue {
+    background-color: #D9D9D9;
+    color: black;
+}

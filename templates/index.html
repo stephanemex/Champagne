@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagramme de Gantt</title>
+    <!-- Lien CSS avec Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+    <!-- Chart.js et adaptateur Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon"></script>
+</head>
+<body>
+    <!-- Menu de navigation -->
+    <nav class="navigation-menu">
+        <a href="{{ url_for('admin') }}" class="nav-link">
+            <img src="{{ url_for('static', filename='icons/settings.png') }}" alt="Admin" title="Admin">
+        </a>
+    </nav>
+
+    <h1 style="text-align: center; margin: 20px;">Diagramme de Gantt</h1>
+    
+    <!-- Tableau des tâches -->
+    <div id="main-container">
+        <h2>Tableau des tâches</h2>
+        <table id="task-table">
+            <thead>
+                <tr>
+                    <th>Axe</th>
+                    <th>Tâche</th>
+                    <th>Responsable</th>
+                    <th>Début</th>
+                    <th>Fin</th>
+                    <th>État</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les lignes ajoutées dynamiquement apparaîtront ici -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Diagramme de Gantt -->
+    <div id="main-container">
+        <h2>Diagramme de Gantt</h2>
+        <canvas id="gantt-chart"></canvas>
+    </div>
+
+    <!-- Lien JS avec Flask -->
+    <script src="{{ url_for('static', filename='JS/script-index.js') }}"></script>
+</body>
+</html>

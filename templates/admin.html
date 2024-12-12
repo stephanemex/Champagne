@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - Diagramme de Gantt</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+    <!-- Menu de navigation -->
+    <nav class="navigation-menu">
+        <a href="{{ url_for('index') }}" class="nav-link">
+            <img src="{{ url_for('static', filename='icons/home.png') }}" alt="Accueil" title="Accueil">
+        </a>
+    </nav>
+
+    <h1 style="text-align: center; margin: 20px;">Admin - Gestion des Axes et Tâches</h1>
+    
+    <!-- Formulaire pour ajouter des tâches -->
+    <div style="width: 80%; margin: 20px auto;">
+        <h2>Ajouter une tâche</h2>
+        <form id="task-form">
+            <label>
+                Axe :
+                <select id="axis" required>
+                    <option value="" disabled selected>Choisir un axe</option>
+                    <option value="Axe 1">Axe 1</option>
+                    <option value="Axe 2">Axe 2</option>
+                    <option value="Axe 3">Axe 3</option>
+                </select>
+            </label>
+            <div id="task-fields" style="display: none; margin-top: 20px;">
+                <label>
+                    Tâche :
+                    <input type="text" id="task" required>
+                </label>
+                <label>
+                    Responsable :
+                    <input type="text" id="responsible" required>
+                </label>
+                <label>
+                    Début :
+                    <input type="date" id="start" required>
+                </label>
+                <label>
+                    Fin :
+                    <input type="date" id="end" required>
+                </label>
+                <button type="submit">Ajouter</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Gestion des statuts -->
+    <div style="width: 80%; margin: 20px auto;">
+        <h2>Gestion des statuts</h2>
+        <ul id="status-list">
+            <!-- Liste dynamique des statuts -->
+        </ul>
+        <form id="add-status-form">
+            <label>
+                Ajouter un nouveau statut :
+                <input type="text" id="new-status" placeholder="Nouveau statut" required>
+            </label>
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
+
+    <!-- Gestion de la base de données -->
+    <div style="width: 80%; margin: 20px auto;">
+        <h2>Gestion de la base de données</h2>
+        <form id="add-column-form">
+            <label>
+                Nom de la table :
+                <input type="text" id="table-name" placeholder="Nom de la table" required>
+            </label>
+            <label>
+                Nom de la colonne :
+                <input type="text" id="column-name" placeholder="Nom de la colonne" required>
+            </label>
+            <label>
+                Type de colonne :
+                <select id="column-type" required>
+                    <option value="TEXT">TEXT</option>
+                    <option value="INTEGER">INTEGER</option>
+                    <option value="REAL">REAL</option>
+                </select>
+            </label>
+            <button type="submit">Ajouter la colonne</button>
+        </form>
+    </div>
+
+    <!-- Message de confirmation -->
+    <p id="message" style="text-align: center; color: green; display: none;">Opération réussie !</p>
+
+    <!-- Lien vers le script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon"></script>
+    <script src="{{ url_for('static', filename='JS/script-admin.js') }}"></script>
+</body>
+</html>
+
